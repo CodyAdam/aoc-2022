@@ -19,9 +19,8 @@ print(stack)
 
 # EXECUTE COMMANDS
 for command in commands:
-    command = command.replace("move ", "")
-    command = command.replace(" from ", " ")
-    command = command.replace(" to ", " ")
+    command = command.replace("move ", "").replace(" from ",
+                                                   " ").replace(" to ", " ")
     count, from_, to = map(int, command.split())
     to_add = []
     for i in range(count):
