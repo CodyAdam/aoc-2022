@@ -27,5 +27,11 @@ for line in lines:
     elif a0 >= b0 and a1 <= b1:
         valid = True
         s += 1
+    elif b0 <= a1 and b1 >= a0:
+        s += 1
+        valid = True
+    elif a0 <= b1 and a1 >= b0:
+        valid = True
+        s += 1
     print(a, b, "yes" if valid else "")
 print(s)
