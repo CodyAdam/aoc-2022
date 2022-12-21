@@ -1,6 +1,7 @@
 import re
-from sympy.solvers import solve
+
 from sympy import Symbol
+from sympy.solvers import solve
 
 values = {}
 for line in open("input.txt").read().splitlines():
@@ -28,8 +29,8 @@ def get(var):
         return var
 
 
-print(get("root"))
+equation = str(get("root")).replace(",", "").replace("'", "")
 
 humn = Symbol("humn")
-res = solve((((4 + (2 * (humn - 3))) / 4) - ((32 - 2) * 5)), humn)
-print(res)
+res = solve(eval(equation), humn)
+print(int(res[0]))
